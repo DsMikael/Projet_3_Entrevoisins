@@ -4,8 +4,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
+
+    private final List<Fragment> lstFragment = new ArrayList<>();
+    private final List<String> lstTiltes = new ArrayList<>();
 
     public ListNeighbourPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -18,7 +24,8 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
      */
     @Override
     public Fragment getItem(int position) {
-        return NeighbourFragment.newInstance();
+        NeighbourFragment.newInstance();
+        return lstFragment.get(position);
     }
 
     /**
@@ -27,6 +34,16 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
      */
     @Override
     public int getCount() {
-        return 1;
+       return lstTiltes.size();
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return lstTiltes.get(position);
+    }
+
+    public void AddFragment (Fragment fragment, String title){
+        lstFragment.add(fragment);
+        lstTiltes.add(title);
     }
 }
