@@ -11,7 +11,6 @@ import java.util.List;
 public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
 
     private final List<Fragment> lstFragment = new ArrayList<>();
-    private final List<String> lstTiltes = new ArrayList<>();
 
     public ListNeighbourPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -24,7 +23,7 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
      */
     @Override
     public Fragment getItem(int position) {
-        NeighbourFragment.newInstance();
+//        NeighbourFragment.newInstance();
         return lstFragment.get(position);
     }
 
@@ -34,16 +33,11 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
      */
     @Override
     public int getCount() {
-       return lstTiltes.size();
+       return lstFragment.size();
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return lstTiltes.get(position);
-    }
 
-    public void AddFragment (Fragment fragment, String title){
+    public void AddFragment (Fragment fragment){
         lstFragment.add(fragment);
-        lstTiltes.add(title);
     }
 }

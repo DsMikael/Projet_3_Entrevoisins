@@ -34,8 +34,9 @@ public class ListNeighbourActivity extends AppCompatActivity {
 
         mPagerAdapter = new ListNeighbourPagerAdapter(getSupportFragmentManager());
 
-        mPagerAdapter.AddFragment(new NeighbourFragment(), (String) mTabLayout.getTabAt(0).getText());
-        mPagerAdapter.AddFragment(new NeighbourFragment(),(String) mTabLayout.getTabAt(1).getText());
+        mPagerAdapter.AddFragment(new NeighbourFragment());
+        mPagerAdapter.AddFragment(new NeighbourFragment());
+
 
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
