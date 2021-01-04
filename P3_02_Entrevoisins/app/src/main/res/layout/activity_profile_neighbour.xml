@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CCC"
+    android:orientation="vertical"
+    tools:context=".ui.neighbour_list.ProfileNeighbour"
+    tools:ignore="MissingPrefix, MissingConstraints ">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintHeight_percent="0.30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:padding="8dp"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"
+        tools:text="@tools:sample/first_names" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_fav_neighbour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:tint="#ffff00"
+        app:backgroundTint="#fff"
+        app:srcCompat="@drawable/ic_star_white_24dp"
+        app:elevation="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar"
+        app:layout_constraintEnd_toEndOf="@id/avatar"
+        android:translationY="24dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@id/avatar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="20dp"
+                    android:textColor="#000"
+                    android:text="@id/name"
+                    tools:text="@tools:sample/first_names" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name"
+                    android:padding="10dp"
+                    android:textSize="16dp"
+                    android:drawableTint="@color/colorAccent"
+                    android:drawableStart="@drawable/ic_baseline_location_on_24"
+                    android:drawablePadding="15dp"
+                    tools:text="Saint pierre du mont à 5km" />
+
+                <TextView
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/address"
+                    android:padding="10dp"
+                    android:textSize="16dp"
+                    android:drawableTint="@color/colorAccent"
+                    android:drawableStart="@drawable/ic_baseline_local_phone_24"
+                    android:drawablePadding="15dp"
+                    tools:text="+33 6 86 57 90 14" />
+
+                <TextView
+                    android:id="@+id/website"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/phoneNumber"
+                    android:padding="10dp"
+                    android:textSize="16dp"
+                    android:drawableTint="@color/colorAccent"
+                    android:drawableStart="@drawable/ic_baseline_language_24"
+                    android:drawablePadding="15dp"
+                    tools:text="wwww.facebook.fr/caroline" />
+
+
+            </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardAboutMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@id/cardInfo">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/titleAboutme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:text="A propos de moi" />
+
+            <TextView
+                android:id="@+id/aboutme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleAboutme"
+                android:padding="10dp"
+                android:maxLines="20"
+                android:textSize="16dp"
+                tools:text="@tools:sample/lorem/random" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

@@ -22,8 +22,6 @@ public class ListNeighbourActivity extends AppCompatActivity {
     @BindView(R.id.container)
     ViewPager mViewPager;
 
-    ListNeighbourPagerAdapter mPagerAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +30,7 @@ public class ListNeighbourActivity extends AppCompatActivity {
 
         setSupportActionBar(mToolbar);
 
-        mPagerAdapter = new ListNeighbourPagerAdapter(getSupportFragmentManager());
-
-        mPagerAdapter.AddFragment(new NeighbourFragment());
-        mPagerAdapter.AddFragment(new NeighbourFragment());
-
-
-        mViewPager.setAdapter(mPagerAdapter);
+        mViewPager.setAdapter(new ListNeighbourPagerAdapter(getSupportFragmentManager()));
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
         mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
@@ -48,4 +40,5 @@ public class ListNeighbourActivity extends AppCompatActivity {
     void addNeighbour() {
         AddNeighbourActivity.navigate(this);
     }
+
 }
