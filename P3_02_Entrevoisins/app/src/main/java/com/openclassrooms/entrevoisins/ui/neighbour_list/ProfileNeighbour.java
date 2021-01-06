@@ -7,17 +7,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class ProfileNeighbour extends AppCompatActivity {
 
@@ -26,6 +27,8 @@ public class ProfileNeighbour extends AppCompatActivity {
     ImageView avatar;
     @BindView(R.id.name)
     TextView name;
+    @BindView(R.id.firstname)
+    TextView firstname;
     @BindView(R.id.address)
     TextView address;
     @BindView(R.id.phoneNumber)
@@ -34,9 +37,10 @@ public class ProfileNeighbour extends AppCompatActivity {
     TextView website;
     @BindView(R.id.aboutme)
     TextView aboutme;
+    @BindView(R.id.add_fav_neighbour)
+    FloatingActionButton fab;
 
-    private NeighbourApiService mApiService;
-    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add_fav_neighbour);
+    private final NeighbourApiService mApiService = DI.getNeighbourApiService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +54,27 @@ public class ProfileNeighbour extends AppCompatActivity {
 
         Glide.with(this).load(neighbour.getAvatarUrl()).into(avatar);
         name.setText(neighbour.getName());
+        firstname.setText(neighbour.getName());
         address.setText(neighbour.getAddress());
         phoneNumber.setText(neighbour.getPhoneNumber());
         website.setText("www.facebook.fr/" + neighbour.getName());
         aboutme.setText(neighbour.getAboutMe());
 
+        if(neighbour.isFavorite()){
+            fab.setImageResource(R.drawable.ic_star_white_24dp);
+        }
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(neighbour.isFavorite()){
+                    fab.setImageResource(R.drawable.ic_star_border_white_24dp);
+                }else{
+                    fab.setImageResource(R.drawable.ic_star_white_24dp);
+                }
+                mApiService.addFavoriteNeighbour(neighbour);
+            }
+        });
     }
 
     @Override
@@ -68,13 +88,7 @@ public class ProfileNeighbour extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick(R.id.add_fav_neighbour)
-    void addFavotiteNeighbour() {
 
-        fab.setImageResource(R.drawable.ic_star_white_24dp);
-        fab.setSelected(false);
-
-    }
 
     public static void navigate(Context context, Neighbour neighbour) {
         Intent intent = new Intent(context, ProfileNeighbour.class);
