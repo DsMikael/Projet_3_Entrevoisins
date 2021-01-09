@@ -20,7 +20,7 @@ import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ProfileNeighbour extends AppCompatActivity {
+public class ProfileNeighbourActivity extends AppCompatActivity {
 
 
     @BindView(R.id.avatar)
@@ -41,6 +41,7 @@ public class ProfileNeighbour extends AppCompatActivity {
     FloatingActionButton fab;
 
     private final NeighbourApiService mApiService = DI.getNeighbourApiService();
+    private static final String NEIGHBOUR_KEY = "neighbour";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,15 +50,14 @@ public class ProfileNeighbour extends AppCompatActivity {
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Intent i = getIntent();
-        Neighbour neighbour = (Neighbour) i.getSerializableExtra("neighbour");
+        Neighbour neighbour = (Neighbour) getIntent().getSerializableExtra(NEIGHBOUR_KEY);
 
         Glide.with(this).load(neighbour.getAvatarUrl()).into(avatar);
         name.setText(neighbour.getName());
         firstname.setText(neighbour.getName());
         address.setText(neighbour.getAddress());
         phoneNumber.setText(neighbour.getPhoneNumber());
-        website.setText("www.facebook.fr/" + neighbour.getName());
+        website.setText(getString(R.string.facebook, neighbour.getName()));
         aboutme.setText(neighbour.getAboutMe());
 
         if(neighbour.isFavorite()){
@@ -72,7 +72,7 @@ public class ProfileNeighbour extends AppCompatActivity {
                 }else{
                     fab.setImageResource(R.drawable.ic_star_white_24dp);
                 }
-                mApiService.addFavoriteNeighbour(neighbour);
+                mApiService.addOrRemoveFavoriteNeighbour(neighbour);
             }
         });
     }
@@ -81,7 +81,7 @@ public class ProfileNeighbour extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home : {
-                finish();
+                onBackPressed();
                 return true;
             }
         }
@@ -91,8 +91,8 @@ public class ProfileNeighbour extends AppCompatActivity {
 
 
     public static void navigate(Context context, Neighbour neighbour) {
-        Intent intent = new Intent(context, ProfileNeighbour.class);
-        intent.putExtra("neighbour", neighbour);
+        Intent intent = new Intent(context, ProfileNeighbourActivity.class);
+        intent.putExtra(NEIGHBOUR_KEY, neighbour);
         ActivityCompat.startActivity(context, intent, null);
     }
 

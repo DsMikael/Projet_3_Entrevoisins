@@ -38,11 +38,6 @@ public interface NeighbourApiService {
      * Deletes a neighbour
      * @param neighbour
      */
-    void addFavoriteNeighbour(Neighbour neighbour);
-    /**
-     * Deletes a neighbour
-     * @param neighbour
-     */
-    void deleteFavoriteNeighbour(Neighbour neighbour);
+    void addOrRemoveFavoriteNeighbour(Neighbour neighbour);
 
 }

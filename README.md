@@ -11,15 +11,19 @@
 
 ### À faire
 
-* [ ] Développement de la nouvelle fonctionnalitée.
+* [x] Développement de la nouvelle fonctionnalitée.
 * [ ] Réalisation de tests instrumentalisés.
-    * test vérifiant que lorsqu’on clique sur un élément de la liste, l’écran de
+
+    - test vérifiant que lorsqu’on clique sur un élément de la liste, l’écran de
 détails est bien lancé ;
-    * test vérifiant qu’au démarrage de ce nouvel écran, le TextView indiquant
+
+    - test vérifiant qu’au démarrage de ce nouvel écran, le TextView indiquant
 le nom de l’utilisateur en question est bien rempli ;
-    *   test vérifiant qu’au clic sur le bouton de suppression, la liste d’utilisateurs
+
+    -   test vérifiant qu’au clic sur le bouton de suppression, la liste d’utilisateurs
 compte bien un utilisateur en moins ;
-    *   test vérifiant que l’onglet Favoris n’affiche que les voisins marqués comme
+
+    -   test vérifiant que l’onglet Favoris n’affiche que les voisins marqués comme
 favoris.
 
 * [ ] Réalisation du test unitaire.

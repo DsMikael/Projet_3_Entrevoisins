@@ -56,7 +56,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProfileNeighbour.navigate(v.getContext(), neighbour);
+                ProfileNeighbourActivity.navigate(v.getContext(), neighbour);
             }
         });
     }

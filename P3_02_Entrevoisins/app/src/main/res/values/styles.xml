@@ -17,4 +17,17 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Theme TextView profile. -->
+    <style name="InfosTextView">
+        <item name="android:padding">@dimen/text_padding</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textColor">@color/colorText</item>
+
+    </style>
+
+    <style name="InfosTextViewTitre" parent="InfosTextView">
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textColor">@color/colorTextTitle</item>
+    </style>
+
 </resources>

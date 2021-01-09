@@ -118,5 +118,4 @@ public class Neighbour implements Serializable {
         return Objects.hash(id);
     }
 
-
 }
