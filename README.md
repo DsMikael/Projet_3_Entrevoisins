@@ -5,8 +5,8 @@
 * Nom de l’application : Entrevoisins
 * Fonctionnalité :  Rendre des petits services : garde d’animaux, petit bricolage, troc d’objets, cours particuliers, ...
 * Langage utilisé et à utiliser : Java
-* Tests d’intégration : non créés
-* Test unitaires : non créés
+* Tests instrumentalisés : non créés
+* Test unitaire : non créé
 * État des tests : null
 
 ### À faire
@@ -14,16 +14,16 @@
 * [x] Développement de la nouvelle fonctionnalitée.
 * [ ] Réalisation de tests instrumentalisés.
 
-    - test vérifiant que lorsqu’on clique sur un élément de la liste, l’écran de
+    - [ ] test vérifiant que lorsqu’on clique sur un élément de la liste, l’écran de
 détails est bien lancé ;
 
-    - test vérifiant qu’au démarrage de ce nouvel écran, le TextView indiquant
+    - [ ] test vérifiant qu’au démarrage de ce nouvel écran, le TextView indiquant
 le nom de l’utilisateur en question est bien rempli ;
 
-    -   test vérifiant qu’au clic sur le bouton de suppression, la liste d’utilisateurs
+    - [ ]   test vérifiant qu’au clic sur le bouton de suppression, la liste d’utilisateurs
 compte bien un utilisateur en moins ;
 
-    -   test vérifiant que l’onglet Favoris n’affiche que les voisins marqués comme
+    - [ ]   test vérifiant que l’onglet Favoris n’affiche que les voisins marqués comme
 favoris.
 
 * [ ] Réalisation du test unitaire.
