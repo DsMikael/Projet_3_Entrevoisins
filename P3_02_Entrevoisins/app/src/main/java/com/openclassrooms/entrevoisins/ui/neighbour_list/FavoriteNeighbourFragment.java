@@ -14,15 +14,8 @@ public class FavoriteNeighbourFragment extends MyNeighbourFragment {
      * Create and return a new instance
      * @return @{@link FavoriteNeighbourFragment}
      */
-    @Override
-    public MyNeighbourFragment newInstance() {
+    public static MyNeighbourFragment newInstance() {
         return new FavoriteNeighbourFragment();
     }
-    /**
-     * Init the List of neighbours
-     */
-    @Override
-    public void initList() {
-        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(getMyNeighbours()));
-    }
+
 }

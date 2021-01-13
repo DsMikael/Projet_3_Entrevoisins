@@ -14,15 +14,9 @@ import java.util.List;
          * Create and return a new instance
          * @return @{@link NeighbourFragment}
          */
-        @Override
-        public MyNeighbourFragment newInstance() {
+
+        public static MyNeighbourFragment newInstance() {
             return new NeighbourFragment();
         }
-        /**
-         * Init the List of neighbours
-         */
-        @Override
-        public void initList() {
-            mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(getMyNeighbours()));
-        }
+
     }

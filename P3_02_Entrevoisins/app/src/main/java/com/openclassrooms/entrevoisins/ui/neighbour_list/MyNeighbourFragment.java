@@ -26,12 +26,6 @@ public abstract class MyNeighbourFragment extends Fragment {
     protected RecyclerView mRecyclerView;
     protected abstract List<Neighbour> getMyNeighbours();
 
-    /**
-     * Create and return a new instance
-     * @return @{@link MyNeighbourFragment}
-     */
-    public abstract MyNeighbourFragment newInstance();
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +46,9 @@ public abstract class MyNeighbourFragment extends Fragment {
     /**
      * Init the List of neighbours
      */
-    public abstract void initList();
+    public void initList() {
+        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(getMyNeighbours()));
+    }
 
     @Override
     public void onResume() {
