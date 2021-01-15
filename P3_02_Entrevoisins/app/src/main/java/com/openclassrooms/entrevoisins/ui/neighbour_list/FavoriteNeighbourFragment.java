@@ -18,4 +18,5 @@ public class FavoriteNeighbourFragment extends MyNeighbourFragment {
         return new FavoriteNeighbourFragment();
     }
 
+
 }
