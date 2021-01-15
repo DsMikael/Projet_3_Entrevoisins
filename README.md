@@ -27,7 +27,7 @@
 
 ### Livrables
 
-* [x] [Les instructions](#Instructions) dans un fichier README à la racine du repository pour expliquer comment exécuter et compiler.
+* [x] [Les instructions](##Instructions) dans un fichier README à la racine du repository pour expliquer comment exécuter et compiler.
 
 ### Code de l'application source
 
