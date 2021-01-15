@@ -47,7 +47,7 @@ Pour compiler le projet, cliquez sur l'icône marteau (Build > Make Project).
 Executez l'application en séléctionnant un Emulateur et lancer le projet en cliquant sur l'icône flêche verte (Run > Run 'app').
 
 [EN]
-Download the project code on [GitHub] (https://github.com/DsMikael/Projet_3_Entrevoisins) and extract it if in ZIP format.
+Download the project code on [GitHub](https://github.com/DsMikael/Projet_3_Entrevoisins) and extract it if in ZIP format.
 
 Open in Android Studio (File> Open) and select the folder.
 Or
