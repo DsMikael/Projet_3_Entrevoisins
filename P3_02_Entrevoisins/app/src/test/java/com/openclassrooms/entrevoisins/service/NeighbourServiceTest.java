@@ -44,20 +44,10 @@ public class NeighbourServiceTest {
 
     @Test
     public void getFavoriteNeighboursWithSuccess() {
-
         Neighbour neighbourAddedFavorite = service.getNeighbours().get(0);
-
-        neighbourAddedFavorite.setFavorite(true);
-
+        service.addOrRemoveFavoriteNeighbour(neighbourAddedFavorite);
         assertTrue(service.getFavoriteNeighbours().contains(neighbourAddedFavorite));
-    }
-
-    @Test
-    public void addOrRemoveFavoriteNeighbourWithSuccess() {
-        Neighbour neighbour = service.getNeighbours().get(0);
-        //  Set Favorite the first item
-        service.addOrRemoveFavoriteNeighbour(neighbour);
-        //  check if the favorites list contains the first element
-        assertTrue(service.getFavoriteNeighbours().contains(neighbour));
+        service.addOrRemoveFavoriteNeighbour(neighbourAddedFavorite);
+        assertFalse(service.getFavoriteNeighbours().contains(neighbourAddedFavorite));
     }
 }

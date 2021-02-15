@@ -7,7 +7,7 @@
 * Langage utilisé et à utiliser : Java
 * Tests instrumentalisés : créés
 * Test unitaire : créé
-* État des tests : True
+* État des tests : Passed
 
 ### À faire
 
@@ -21,7 +21,6 @@
     - [x] test vérifiant qu’au clic sur le bouton de suppression, la liste d’utilisateurs compte bien un utilisateur en moins ;
 
     - [x] test vérifiant que l’onglet Favoris  n’affiche que les voisins marqués comme favoris.
-
 
 * [x] Réalisation du test unitaire.
 
